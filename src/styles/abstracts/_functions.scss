@@ -1,0 +1,16 @@
+@use 'sass:math';
+
+// Convert a px value to rem (root font size = 16px).
+@function rem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+// Alpha variant of a color token, used for layered surfaces.
+@function alpha($color, $amount) {
+  @return rgba($color, $amount);
+}
+
+// Clamp a value between a minimum and a maximum.
+@function clamp-value($value, $min, $max) {
+  @return math.max($min, math.min($value, $max));
+}

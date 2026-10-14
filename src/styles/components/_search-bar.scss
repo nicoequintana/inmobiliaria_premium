@@ -1,0 +1,114 @@
+@use '../abstracts' as *;
+
+// Floating search bar. Stacks on mobile; on desktop it breaks out of the
+// container so it can straddle the hero's lower edge (half over the photo).
+.search-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background-color: var(--color-glass);
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+}
+
+.search-bar__icon {
+  display: none;
+  color: var(--color-gold);
+}
+
+.search-bar__icon-circle {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--color-gold-ring);
+  border-radius: 50%;
+  background-color: var(--color-gold-soft);
+  color: var(--color-gold);
+}
+
+.search-bar__field {
+  display: grid;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.search-bar__label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.search-bar__select {
+  width: 100%;
+  @include tap-target;
+  padding: 0.35rem 1.6rem 0.35rem 0;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--color-line);
+  border-radius: 0;
+  color: var(--color-text);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23c9a46a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-bottom-color: var(--color-gold-ring);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+}
+
+.search-bar__select option {
+  background-color: var(--color-night-2);
+  color: var(--color-text);
+}
+
+.search-bar__submit {
+  width: 100%;
+}
+
+@include respond('sm') {
+  .search-bar {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .search-bar__submit {
+    grid-column: 1 / -1;
+  }
+}
+
+@include respond('md') {
+  .search-bar {
+    grid-template-columns: auto repeat(3, minmax(0, 1fr)) auto;
+    align-items: center;
+    gap: var(--space-5);
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .search-bar__icon {
+    display: grid;
+    place-items: center;
+  }
+
+  .search-bar__field {
+    padding-left: var(--space-4);
+    border-left: 1px solid var(--color-line);
+  }
+
+  .search-bar__submit {
+    width: auto;
+    grid-column: auto;
+  }
+}

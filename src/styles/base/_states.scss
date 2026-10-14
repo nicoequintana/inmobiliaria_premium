@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+// Generic error/loading states (used by ErrorState, LoadingState, etc.)
+.error-state {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+  padding-block: calc(var(--header-h) + var(--space-6)) var(--space-section);
+}
+
+.error-state__lede {
+  max-width: 46rem;
+  color: var(--color-text-muted);
+}
+
+// Loading state: centered block with a spinning accent ring.
+.loading-state {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block: calc(var(--header-h) + var(--space-6)) var(--space-section);
+  color: var(--color-text-muted);
+}
+
+.loading-state__spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-line-strong);
+  border-top-color: var(--color-gold);
+  animation: gb-spin 0.8s linear infinite;
+  flex: 0 0 auto;
+}
+
+@keyframes gb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-state__spinner {
+    animation: none;
+  }
+}

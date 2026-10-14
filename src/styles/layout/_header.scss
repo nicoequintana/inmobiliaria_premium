@@ -1,0 +1,176 @@
+@use '../abstracts' as *;
+
+// Fixed header floating over the hero. Transparent at rest, frosted night
+// surface once the page scrolls. Brand left, links centred, gold CTA right.
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.site-header.is-scrolled {
+  background-color: var(--color-glass-strong);
+  border-bottom-color: var(--color-line);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  backdrop-filter: blur(14px) saturate(130%);
+}
+
+.site-header__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    'brand'
+    'nav';
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  min-height: var(--header-h);
+  padding-block: var(--space-2);
+
+  @include respond('sm') {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 'brand nav actions';
+    gap: var(--space-4);
+  }
+}
+
+// Mobile only: once the page scrolls, drop the brand row and keep the nav so the
+// fixed header shrinks from two rows to one. From `sm` up nothing changes.
+.site-header.is-scrolled .site-header__inner {
+  grid-template-areas: 'nav';
+  min-height: 0;
+
+  @include respond('sm') {
+    grid-template-areas: 'brand nav actions';
+    min-height: var(--header-h);
+  }
+}
+
+.site-header.is-scrolled .site-header__brand {
+  display: none;
+
+  @include respond('sm') {
+    display: inline-flex;
+  }
+}
+
+.site-header__brand {
+  grid-area: brand;
+  @include tap-target;
+  @include focus-ring;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.site-header__mark {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--color-gold-ring);
+  border-radius: var(--radius-pill);
+  color: var(--color-gold);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.site-header__name {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+}
+
+.site-header__tagline {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: var(--ls-caps-wide);
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.site-header__nav {
+  grid-area: nav;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-1);
+}
+
+.site-header__link {
+  @include tap-target;
+  @include focus-ring;
+  padding-inline: var(--space-3);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--color-text);
+  }
+
+  &.is-active {
+    color: var(--color-gold);
+  }
+}
+
+// Hidden on mobile: the nav already links to the catalog, and a bare circular
+// arrow reads as an unlabeled control. The labelled CTA returns from `sm` up.
+.site-header__actions {
+  grid-area: actions;
+  display: none;
+  align-items: center;
+  justify-self: end;
+  gap: var(--space-2);
+
+  @include respond('sm') {
+    display: flex;
+  }
+}
+
+.site-header__cta {
+  font-size: 0.9rem;
+}
+
+// On mobile the CTA collapses to its circular arrow; the accessible name comes
+// from the link's aria-label, and the nav still exposes "Propiedades".
+.site-header__cta-text {
+  display: none;
+
+  @include respond('sm') {
+    display: inline;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+  z-index: 60;
+  @include tap-target;
+  padding-inline: var(--space-3);
+  background-color: var(--color-night);
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  position: fixed;
+  top: var(--space-2);
+  left: var(--space-2);
+}

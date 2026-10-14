@@ -1,0 +1,121 @@
+@use '../abstracts' as *;
+
+// Buttons and the shared back-navigation control.
+.btn {
+  @include tap-target(48px);
+  @include focus-ring;
+  gap: var(--space-2);
+  padding: 0.55rem 1.4rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+
+  @include motion-safe {
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.btn--primary {
+  background-color: var(--color-gold);
+  color: var(--color-night);
+
+  &:hover {
+    background-color: var(--color-gold-deep);
+  }
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-text);
+  border-color: var(--color-line-strong);
+
+  &:hover {
+    color: var(--color-gold);
+    border-color: var(--color-gold-ring);
+  }
+}
+
+.btn--lg {
+  padding: 0.7rem 1.6rem;
+  font-size: 1rem;
+}
+
+// Circular arrow badge used by buttons, links and cards.
+.circle-arrow {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  background-color: var(--color-night);
+  color: var(--color-gold);
+  transition: transform 0.2s ease;
+}
+
+.circle-arrow--ghost {
+  background-color: transparent;
+  border: 1px solid var(--color-line-strong);
+  color: currentColor;
+}
+
+// Arrows shift on hover of their parent control.
+.btn:hover .circle-arrow,
+.circle-arrow:hover {
+  transform: translateX(2px);
+}
+
+.btn--ghost:hover .circle-arrow--ghost {
+  transform: none;
+}
+
+// Visible exit on every navigable page, at every breakpoint.
+.back-link {
+  @include tap-target;
+  @include focus-ring;
+  align-self: flex-start;
+  gap: var(--space-2);
+  padding-inline: var(--space-3);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover {
+    color: var(--color-gold);
+    border-color: var(--color-gold-ring);
+  }
+
+  .icon {
+    transition: transform 0.2s ease;
+  }
+
+  &:hover .icon {
+    transform: translateX(-2px);
+  }
+}

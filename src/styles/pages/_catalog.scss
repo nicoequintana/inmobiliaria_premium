@@ -1,0 +1,53 @@
+@use '../abstracts' as *;
+
+// Catalog page composition. Offsets below the fixed header.
+.catalog {
+  display: grid;
+  gap: var(--space-5);
+  padding-block: calc(var(--header-h) + var(--space-6)) var(--space-section);
+}
+
+.catalog__head {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 52rem;
+}
+
+.catalog__lede {
+  color: var(--color-text-muted);
+}
+
+.result-count {
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.result-count__value {
+  color: var(--color-gold);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+// ---- Empty / no-results state --------------------------------------------
+.empty-state {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+  padding: var(--space-6);
+  border: 1px dashed var(--color-line-strong);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+}
+
+.empty-state__lede {
+  color: var(--color-text-muted);
+}
+
+.empty-state strong {
+  color: var(--color-gold);
+}

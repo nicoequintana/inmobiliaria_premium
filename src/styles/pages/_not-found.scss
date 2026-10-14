@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+// Not found / missing listing. Both the full NotFoundPage and the detail
+// NotFoundBlock can fall back to this simple, centred block.
+.not-found-block {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+  padding: var(--space-7) var(--space-4);
+  margin-top: calc(var(--header-h) + var(--space-4));
+}
+
+.not-found-block__lede {
+  color: var(--color-text-muted);
+}
+
+// Full 404 page (NotFoundPage). Matches the dark-luxury system and offsets
+// below the fixed transparent header.
+.not-found {
+  display: grid;
+  gap: var(--space-4);
+  justify-items: start;
+  padding-block: calc(var(--header-h) + var(--space-6)) var(--space-section);
+}
+
+.not-found__code {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 10rem);
+  font-weight: 500;
+  line-height: 0.8;
+  letter-spacing: 0.05em;
+  color: var(--color-gold);
+  opacity: 0.9;
+}
+
+.not-found h1 {
+  font-size: var(--fs-h1);
+}
+
+.not-found__lede {
+  max-width: 46rem;
+  color: var(--color-text-muted);
+  font-size: 1.02rem;
+}

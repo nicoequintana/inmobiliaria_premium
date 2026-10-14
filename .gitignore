@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Local environment and logs
+.env
+.env.*
+*.log
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Browser-automation artifacts (screenshots, snapshots, console logs)
+.playwright-mcp/

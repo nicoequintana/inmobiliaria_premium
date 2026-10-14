@@ -1,0 +1,59 @@
+@use 'sass:map';
+
+// Breakpoints: <640 / >=640 / >=1024 / >=1280 (grid 1 / 2 / 3–4 columns).
+$breakpoints: (
+  'sm': 640px,
+  'md': 1024px,
+  'lg': 1280px,
+);
+
+// Mobile-first media query helper.
+@mixin respond($name) {
+  @if not map.has-key($breakpoints, $name) {
+    @error 'Unknown breakpoint: #{$name}';
+  }
+
+  @media (min-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+// Guarantee an effective touch target of at least 44x44 px.
+@mixin tap-target($size: 44px) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: $size;
+  min-width: $size;
+}
+
+// Visible keyboard focus ring (gold, never removes the native indicator).
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+  }
+}
+
+// Only apply decorative motion when the visitor allows it.
+@mixin motion-safe {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+// Frosted night surface with a thin hairline border.
+@mixin glass($bg: var(--color-glass)) {
+  background-color: $bg;
+  border: 1px solid var(--color-line);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  backdrop-filter: blur(16px) saturate(130%);
+}
+
+// Thin 1px hairline used as a divider.
+@mixin hairline {
+  height: 1px;
+  border: 0;
+  background-color: var(--color-line);
+}

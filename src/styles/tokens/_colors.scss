@@ -1,0 +1,57 @@
+// Color tokens — dark-luxury editorial palette (night navy / gold / off-white).
+:root {
+  color-scheme: dark;
+
+  // Night-navy base. A subtle vertical gradient is applied on <body>.
+  --color-night: #0b1220;
+  --color-night-2: #0e1a2e;
+  --color-surface: #101c30;
+  --color-surface-2: #13213a;
+
+  // Translucent surfaces for glassmorphism (floating bars, hero card).
+  --color-glass: rgba(16, 28, 48, 0.62);
+  --color-glass-strong: rgba(11, 18, 32, 0.86);
+
+  // Gold / champagne accent.
+  --color-gold: #c9a46a;
+  --color-gold-deep: #b8935a;
+  --color-gold-soft: rgba(201, 164, 106, 0.14);
+  --color-gold-ring: rgba(201, 164, 106, 0.55);
+
+  // Text.
+  --color-text: #f2eee8;
+  --color-text-muted: #8c96a6;
+
+  // Thin 1px hairlines (white at 8–16%).
+  --color-line: rgba(255, 255, 255, 0.09);
+  --color-line-strong: rgba(255, 255, 255, 0.16);
+
+  --shadow-soft: 0 30px 60px -36px rgba(0, 0, 0, 0.85);
+  --shadow-card: 0 24px 50px -32px rgba(0, 0, 0, 0.8);
+  --shadow-hover: 0 34px 70px -34px rgba(0, 0, 0, 0.9);
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  // Minimum effective touch target (UX hard rule: >= 44x44 px).
+  --target-min: 44px;
+
+  --container-max: 1240px;
+
+  // Floating header height per breakpoint (used to offset page content).
+  --header-h: 7.5rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-h: 5.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-h: 5.75rem;
+  }
+}

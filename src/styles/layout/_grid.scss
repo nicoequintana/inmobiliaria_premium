@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+// Generic layout helpers (the catalog grid lives with the listing card component).
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site__main {
+  flex: 1 1 auto;
+}
+
+.stack {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.split-2 {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@include respond('md') {
+  .split-2 {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: center;
+  }
+}

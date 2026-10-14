@@ -1,0 +1,23 @@
+// Typography tokens — Cormorant Garamond (display serif) + Manrope (body sans),
+// loaded in index.html.
+:root {
+  --font-display: 'Cormorant Garamond', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --font-body: 'Manrope', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  --fs-display: clamp(2.75rem, 7.5vw, 5.25rem);
+
+  --fs-h1: clamp(2rem, 4.5vw, 3.4rem);
+  --fs-h2: clamp(1.7rem, 3.4vw, 2.75rem);
+  --fs-h3: 1.3rem;
+  --fs-body: 1rem;
+  --fs-small: 0.85rem;
+
+  --lh-tight: 1.06;
+  --lh-body: 1.65;
+
+  --ls-caps: 0.18em;
+  --ls-caps-wide: 0.28em;
+
+  --fw-display: 400;
+  --fw-display-strong: 500;
+}

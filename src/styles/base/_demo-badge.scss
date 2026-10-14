@@ -1,0 +1,23 @@
+// Non-dismissible demo badge (demo honesty rule). Rendered in the footer on
+// every page, styled as a gold-outline pill on the night background.
+.demo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--color-gold-ring);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-gold-soft);
+  color: var(--color-gold);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.demo-badge__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+}

@@ -1,0 +1,18 @@
+// SCSS barrel — single entry point, imported once from src/main.jsx.
+//
+// Load order is intentional:
+//   tokens    → CSS custom properties (:root)
+//   abstracts → functions and mixins (no CSS emitted)
+//   base      → element resets and base typography
+//   layout    → page frame (header, footer, container, grid)
+//   components→ reusable UI pieces (cards, forms, buttons, gallery)
+//   pages     → route-specific composition
+//
+// @forward / @use only (never @import) so the layers stay independent
+// modules with a predictable cascade.
+@use 'tokens';
+@use 'abstracts';
+@use 'base';
+@use 'layout';
+@use 'components';
+@use 'pages';

@@ -1,0 +1,70 @@
+// Element typography and global reading patterns.
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: var(--fw-display);
+  line-height: var(--lh-tight);
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+p {
+  margin: 0;
+  max-width: 68ch;
+}
+
+a {
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-night);
+}
+
+// Small uppercase gold label used above headings.
+.eyebrow {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: var(--ls-caps-wide);
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+// Shared two-line section title (line 2 in gold).
+.section-title {
+  display: grid;
+  letter-spacing: 0.005em;
+}
+
+.section-title__line {
+  display: block;
+}
+
+.section-title__line--accent {
+  color: var(--color-gold);
+  font-style: italic;
+}

@@ -1,0 +1,79 @@
+@use '../abstracts' as *;
+
+// Footer carries the site-wide demo badge and the USD + fictitious-data
+// disclaimer on every page.
+.site-footer {
+  margin-top: var(--space-section);
+  padding-block: var(--space-6) var(--space-5);
+  border-top: 1px solid var(--color-line);
+  background-color: rgba(8, 13, 23, 0.6);
+}
+
+.site-footer__inner {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.site-footer__brand-col {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.site-footer__brand {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.site-footer__tagline {
+  color: var(--color-gold);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.site-footer__link {
+  @include tap-target;
+  @include focus-ring;
+  padding-inline: var(--space-3);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-gold);
+  }
+}
+
+.site-footer__legal {
+  display: grid;
+  gap: var(--space-2);
+  justify-items: start;
+}
+
+.site-footer__disclaimer {
+  max-width: 74ch;
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+}
+
+@include respond('md') {
+  .site-footer__inner {
+    grid-template-columns: 1.2fr auto 1.6fr;
+    align-items: start;
+    gap: var(--space-6);
+  }
+
+  .site-footer__nav {
+    flex-direction: column;
+  }
+}
