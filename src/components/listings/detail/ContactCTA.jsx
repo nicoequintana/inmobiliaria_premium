@@ -1,7 +1,7 @@
 // Contact channels for the demo agency. Fictitious values, disclosed on the page.
 export const CONTACT = {
   whatsapp: '5491100000000',
-  email: 'contacto@garciaboillos.demo',
+  email: 'contacto@inmobiliariademo.demo',
 };
 
 export function whatsappHref(message) {
@@ -14,7 +14,7 @@ export function mailtoHref(subject, body) {
 
 // Presentational: contact-only conversion. WhatsApp + mailto, no forms, no accounts.
 function ContactCTA({ listing }) {
-  const message = `Hola, me interesa "${listing.title}" (${listing.id}) del catálogo demo de Garcia Boillos Propiedades.`;
+  const message = `Hola, me interesa "${listing.title}" (${listing.id}) del catálogo demo de Inmobiliaria Demo.`;
   const subject = `Consulta por ${listing.title}`;
 
   return (

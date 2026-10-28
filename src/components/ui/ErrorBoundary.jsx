@@ -16,7 +16,7 @@ class ErrorBoundary extends Component {
 
   componentDidCatch(error, info) {
     // Kept intentionally: surfacing the cause is what makes the fallback debuggable.
-    console.error('Unhandled render error in Garcia Boillos Propiedades:', error, info);
+    console.error('Unhandled render error in Inmobiliaria Demo:', error, info);
   }
 
   render() {

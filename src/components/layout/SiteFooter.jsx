@@ -9,7 +9,7 @@ function SiteFooter() {
     <footer className="site-footer">
       <div className="container site-footer__inner">
         <div className="site-footer__brand-col">
-          <p className="site-footer__brand">Garcia Boillos Propiedades</p>
+          <p className="site-footer__brand">Inmobiliaria Demo</p>
           <p className="site-footer__tagline">Inmobiliaria demo · CABA y zona norte</p>
         </div>
 

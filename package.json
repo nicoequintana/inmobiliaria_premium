@@ -1,9 +1,9 @@
 {
-  "name": "garcia-boillos-propiedades",
+  "name": "inmobiliaria-demo",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Demo SPA for Garcia Boillos Propiedades — fictitious USD listings, client-side filtering, no backend.",
+  "description": "Demo SPA for Inmobiliaria Demo — fictitious USD listings, client-side filtering, no backend.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

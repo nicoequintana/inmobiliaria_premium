@@ -1,4 +1,4 @@
-# Garcia Boillos Propiedades — Demo
+# Inmobiliaria Demo
 
 Sitio web de demostración para una inmobiliaria de CABA y zona norte: catálogo de propiedades en dólares con filtros, galería de fotos y contacto directo por WhatsApp o email.
 

@@ -25,13 +25,13 @@ function SiteHeader() {
         Saltar al contenido principal
       </a>
       <div className="container site-header__inner">
-        <Link className="site-header__brand" to="/" aria-label="Garcia Boillos Propiedades, ir al inicio">
+        <Link className="site-header__brand" to="/" aria-label="Inmobiliaria Demo, ir al inicio">
           <span className="site-header__mark" aria-hidden="true">
-            GB
+            ID
           </span>
           <span className="site-header__name">
-            Garcia Boillos
-            <span className="site-header__tagline">Propiedades</span>
+            Inmobiliaria
+            <span className="site-header__tagline">Demo</span>
           </span>
         </Link>
 

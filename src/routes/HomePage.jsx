@@ -15,7 +15,7 @@ const zonaOptions = ZONES.map((zona) => ({ value: zona, label: zona }));
 // Container: the landing. Composes hero, floating search, featured carousel,
 // benefits and contact; all sections share the dark luxury system.
 function HomePage() {
-  const message = 'Hola, quiero consultar por una propiedad del catálogo demo de Garcia Boillos Propiedades.';
+  const message = 'Hola, quiero consultar por una propiedad del catálogo demo de Inmobiliaria Demo.';
 
   return (
     <div className="home">
@@ -79,7 +79,7 @@ function HomePage() {
                 href={whatsappHref(message)}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Escribir por WhatsApp a Garcia Boillos Propiedades"
+                aria-label="Escribir por WhatsApp a Inmobiliaria Demo"
               >
                 Escribir por WhatsApp
               </a>
